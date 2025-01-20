@@ -57,9 +57,7 @@ class PerizinanController extends Controller
         // Simpan foto jika ada file yang di-upload
         if ($request->hasFile('foto')) {
             $foto = $request->file('foto');
-            // Simpan foto menggunakan storeAs dan ambil nama file yang di-hash
             $fotoPath = $foto->storeAs('products', $foto->hashName(), 'public');
-            // Simpan path foto ke database
             $perizinan->foto = $fotoPath;
         }
 
